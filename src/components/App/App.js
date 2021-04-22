@@ -1,6 +1,8 @@
 import React, { Component } from 'react'; 
 import './App.scss';
+import '../../animista.css'
 import { getData } from '../../utilities.js'; 
+import Header from '../Header/Header'; 
 import SearchForm from '../SearchForm/SearchForm'; 
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 
@@ -38,6 +40,7 @@ class App extends Component {
  render() {
    return (
      <main>
+     <Header />
       <SearchForm 
           handleChange={this.handleChange}
           showPhoto={this.showPhoto}
