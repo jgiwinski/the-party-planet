@@ -9,26 +9,26 @@ class App extends Component {
     super(); 
     this.state = {
       error: '', 
-      featuredDay: null,
+      featuredDay: '',
       inputDate: ''
     }
   }
 
   componentDidMount() {
-    getData()
-      // .then(response => console.log(response.photos))
-    .then(response => this.setState({featuredDay: response.photos[0]}))
-    .catch(error => this.setState({error: error}))
+    getData('2021-4-21')
+      .then(response => this.setState({featuredDay: response.photos[0]}))
+      .catch(error => this.setState({error: error}))
   }
 
   getPhoto = (date) => {
     getData(date)
-    .then(response => this.setState({featuredDay: response.photos[0]}))
-    .catch(error => this.setState({error: error}))
+      .then(response => this.setState({featuredDay: response.photos[0]}))
+      .catch(error => this.setState({error: error}))
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+      this.setState({ [e.target.name]: e.target.value })
+      console.log(this.state.inputDate)
   }
 
  render() {
@@ -39,13 +39,11 @@ class App extends Component {
           getPhoto={this.getPhoto}
           inputDate={this.state.inputDate}
       />
+      {/* {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>} */}
       <PhotoDetails featuredDay={this.state.featuredDay}/>
      </main>
    )
  }
-
-
-
 }
 
 export default App;
