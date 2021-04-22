@@ -1,1 +1,9 @@
 @import '../../index.scss';
+
+.main-container {
+    @include centerRow; 
+}
+
+.main-image {
+    width: 50%;
+}

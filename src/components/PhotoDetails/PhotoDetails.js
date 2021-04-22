@@ -1,4 +1,5 @@
 import React from 'react'; 
+import './PhotoDetails.scss'; 
 
 const PhotoDetails = ({ featuredDay }) => {
     const { img_src, rover, earth_date } = featuredDay; 
@@ -12,9 +13,9 @@ const PhotoDetails = ({ featuredDay }) => {
     }
 
     return (
-        <div>
-            <section>
-                <img src={img_src} alt={'Mars'}></img>
+        <div className='main-container'>
+            <section >
+                <img className='main-image' src={img_src} alt={'Mars'}></img>
             </section>
             <section>
                 <h1>Your Mars Photo!</h1>
