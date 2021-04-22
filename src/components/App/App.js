@@ -1,26 +1,46 @@
 import React, { Component } from 'react'; 
 import './App.scss';
 import { getData } from '../../utilities.js'; 
+import SearchForm from '../SearchForm/SearchForm'; 
+import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 
 class App extends Component {
   constructor() {
     super(); 
     this.state = {
       error: '', 
-      featuredPhoto: null
+      featuredDay: null,
+      inputDate: ''
     }
   }
 
   componentDidMount() {
-    getData(earthDay)
+    getData()
       // .then(response => console.log(response.photos))
-    .then(response => this.setState({featuredPhoto: response.photos[0]}))
+    .then(response => this.setState({featuredDay: response.photos[0]}))
     .catch(error => this.setState({error: error}))
+  }
+
+  getPhoto = (date) => {
+    getData(date)
+    .then(response => this.setState({featuredDay: response.photos[0]}))
+    .catch(error => this.setState({error: error}))
+  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
 
  render() {
    return (
-    <h1>HELLO MY PARTY PEOPLE</h1>
+     <main>
+      <SearchForm 
+          handleChange={this.handleChange}
+          getPhoto={this.getPhoto}
+          inputDate={this.state.inputDate}
+      />
+      <PhotoDetails featuredDay={this.state.featuredDay}/>
+     </main>
    )
  }
 
