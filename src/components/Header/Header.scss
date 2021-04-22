@@ -1,7 +1,8 @@
 @import '../../index.scss';
 
 header {
-    background-image: url("./milky-way-984050.jpg");
+    @include centerColumn; 
+    background-image: url("./mars-2051748.png");
     background-size: cover; 
     background-position: 50% 80%;
     height: 600px; 
@@ -9,5 +10,5 @@ header {
 }
 
 .title {
-    font-size: xx-large;
+    font-size: 5em;
 }
