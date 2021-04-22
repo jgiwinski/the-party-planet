@@ -9,6 +9,22 @@ header {
     color: white; 
 }
 
+// .kenburns-right {
+// 	-webkit-animation: kenburns-right 20s ease-out both;
+// 	        animation: kenburns-right 20s ease-out both;
+// }
+
 .title {
     font-size: 5em;
+    text-shadow: 2px 2px black;
+}
+
+// .text-pop-up-top {
+// 	-webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+// 	        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+// }
+
+.tagline {
+    padding-top: 20px; 
+    text-shadow: 1px 1px black;
 }

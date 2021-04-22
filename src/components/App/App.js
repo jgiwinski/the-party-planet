@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import './App.scss';
+import '../../animista.css'
 import { getData } from '../../utilities.js'; 
 import Header from '../Header/Header'; 
 import SearchForm from '../SearchForm/SearchForm'; 

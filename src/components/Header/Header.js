@@ -3,9 +3,9 @@ import './Header.scss';
 
 const Header = () => {
     return (
-        <header>
+        <header className='kenburns-right'>
             <h1 className='title'>The Party Planet</h1>
-            <h3>A celebration out of this world!</h3>
+            <h3 className='tagline'>A celebration out of this world!</h3>
         </header>
     )
 }
