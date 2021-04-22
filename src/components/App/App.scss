@@ -1,1 +1,9 @@
 @import '../../index.scss';
+
+* {
+    margin: 0; 
+}
+
+main {
+    background-color: $black;
+}

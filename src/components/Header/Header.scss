@@ -1,1 +1,13 @@
 @import '../../index.scss';
+
+header {
+    background-image: url("./milky-way-984050.jpg");
+    background-size: cover; 
+    background-position: 50% 80%;
+    height: 600px; 
+    color: white; 
+}
+
+.title {
+    font-size: xx-large;
+}
