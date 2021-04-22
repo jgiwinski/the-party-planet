@@ -1,7 +1,7 @@
 import React from 'react'; 
 // import PropTypes from 'prop-types'; 
 
-const SearchForm = ({getPhoto, handleChange, inputDate}) => {
+const SearchForm = ({showPhoto, handleChange, inputDate}) => {
     return (
         <form>
             <input 
@@ -10,7 +10,7 @@ const SearchForm = ({getPhoto, handleChange, inputDate}) => {
                 value={inputDate}
                 onChange={e => handleChange(e)}
             ></input>
-            <button onClick={e => getPhoto(e)}>Launch!</button>
+            <button onClick={e => showPhoto(e)}>Launch!</button>
         </form>
     )
 }

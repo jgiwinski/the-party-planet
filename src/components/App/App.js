@@ -26,9 +26,13 @@ class App extends Component {
       .catch(error => this.setState({error: error}))
   }
 
+  showPhoto = (event) => {
+    event.preventDefault(); 
+    this.getPhoto(this.state.inputDate)
+  }
+
   handleChange = e => {
-      this.setState({ [e.target.name]: e.target.value })
-      console.log(this.state.inputDate)
+      this.setState({ inputDate: e.target.value })
   }
 
  render() {
@@ -36,11 +40,11 @@ class App extends Component {
      <main>
       <SearchForm 
           handleChange={this.handleChange}
-          getPhoto={this.getPhoto}
+          showPhoto={this.showPhoto}
           inputDate={this.state.inputDate}
       />
-      {/* {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>} */}
-      <PhotoDetails featuredDay={this.state.featuredDay}/>
+      {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
+      {/* <PhotoDetails featuredDay={this.state.featuredDay}/> */}
      </main>
    )
  }
