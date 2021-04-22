@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import './App.scss';
-import getData from '../../utilities.js'; 
+import { getData } from '../../utilities.js'; 
 
 class App extends Component {
   constructor() {
@@ -9,6 +9,13 @@ class App extends Component {
       error: '', 
       featuredPhoto: null
     }
+  }
+
+  componentDidMount() {
+    getData(earthDay)
+      // .then(response => console.log(response.photos))
+    .then(response => this.setState({featuredPhoto: response.photos[0]}))
+    .catch(error => this.setState({error: error}))
   }
 
  render() {
