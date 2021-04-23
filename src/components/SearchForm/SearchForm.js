@@ -24,8 +24,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <input 
                     type="radio" 
                     id="radioBirthday" 
-                    name="celebration" 
-                    // checked={this.state.selectedOccasion === 'birthday'}
+                    name= {"selectedOccasion"}
                     value="birthday"
                     onChange={e => handleChange(e)}
                     />
@@ -34,8 +33,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <input 
                     type="radio" 
                     id="radioAnniversary" 
-                    name="celebration" 
-                    // checked={this.state.selectedOccasion === 'anniversary'}
+                    name={"selectedOccasion"}
                     value="anniversary"
                     onChange={e => handleChange(e)}
                     />
@@ -44,8 +42,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <input 
                     type="radio" 
                     id="radioGraduation" 
-                    name="celebration" 
-                    // checked={this.state.selectedOccasion === 'graduation'}
+                    name={"selectedOccasion"}
                     value="graduation"
                     onChange={e => handleChange(e)}
                     />
@@ -54,8 +51,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <input 
                     type="radio" 
                     id="radioComingOut" 
-                    name="celebration" 
-                    // checked={this.state.selectedOccasion === 'comingOut'}
+                    name={"selectedOccasion"}
                     value="comingOut"
                     onChange={e => handleChange(e)}
                 />
@@ -64,8 +60,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <input 
                     type="radio" 
                     id="radioOther" 
-                    name="celebration" 
-                    // checked={this.state.selectedOccasion === 'other'}
+                    name={"selectedOccasion"}
                     value="other"
                     onChange={e => handleChange(e)}
                     />
@@ -80,6 +75,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                     name={"inputDate"}
                     value={inputDate}
                     onChange={e => handleChange(e)}
+                    required
                 ></input>
                 <button onClick={e => showPhoto(e)}>Launch!</button>
             </div>

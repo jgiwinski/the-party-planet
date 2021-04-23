@@ -37,10 +37,19 @@ class App extends Component {
       case 'birthday' :
         console.log('birthday');
         break;
-        case 'anniversary' : 
+      case 'anniversary' : 
         console.log('anniversary')
         break; 
-        default: 
+      case 'graduation' :
+        console.log('graduation')
+        break; 
+      case 'comingOut' :
+        console.log('comingOut')
+        break; 
+      case 'other' :
+        console.log('PARTY ANYWAY MOTHER FUCKERS')
+        break;
+      default: 
         console.log('OH BOY OH BOY')
     }
   }
