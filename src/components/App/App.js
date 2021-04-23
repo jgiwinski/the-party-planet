@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       error: '', 
       featuredDay: '',
+      selectedOccasion: '',
       inputDate: '',
       message: ''
     }
@@ -32,10 +33,20 @@ class App extends Component {
   showPhoto = (event) => {
     event.preventDefault(); 
     this.getPhoto(this.state.inputDate)
+    switch (this.state.selectedOccasion) {
+      case 'birthday' :
+        console.log('birthday');
+        break;
+        case 'anniversary' : 
+        console.log('Anniversary')
+        break; 
+        default: 
+        console.log('OH BOY OH BOY')
+    }
   }
 
   handleChange = e => {
-      this.setState({ inputDate: e.target.value })
+      this.setState({ [e.target.name]: e.target.value })
   }
 
  render() {
@@ -45,10 +56,11 @@ class App extends Component {
       <SearchForm 
           handleChange={this.handleChange}
           showPhoto={this.showPhoto}
+          selectedOccasion={this.state.selectedOccasion}
           inputDate={this.state.inputDate}
+          message={this.state.message}
       />
       {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
-      {/* <PhotoDetails featuredDay={this.state.featuredDay}/> */}
      </main>
    )
  }

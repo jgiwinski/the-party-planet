@@ -5,10 +5,8 @@ const PhotoDetails = ({ featuredDay }) => {
     const { img_src, rover, earth_date } = featuredDay; 
     const slashDate = earth_date.replaceAll('-', '/')
     const formatDate = inputDate => {
-        console.log(inputDate)
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let date = new Date(inputDate);
-        console.log(date)
         return monthNames[date.getMonth()] + ' ' + date.getDate() ;
     }
 
