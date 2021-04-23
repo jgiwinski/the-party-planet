@@ -1,6 +1,6 @@
 @import '../../index.scss';
 
-.occasion-btn-container {
+.radio-toolbar {
     @include centerRow; 
     margin: 4% 10%;
 }
@@ -10,22 +10,15 @@
     width: 0;
   }
 
-.occasion-btn {
-background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
-padding: 10px 20px;
-border-radius: 4px;
-font-size: 16px;
-color: white;
-    &:hover {
-        -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
+.radio-toolbar label{
+    background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+        &:hover {
+            background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
 }
-    
-.radio-toolbar label:hover {
-    // transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    // background-position: right center;
-    background-color: red;
 }
 
 .radio-toolbar input[type="radio"]:checked + label {
