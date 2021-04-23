@@ -18,9 +18,18 @@
     color: white;
         &:hover {
             background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
-}
+    }
 }
 
 .radio-toolbar input[type="radio"]:checked + label {
     border: solid white;
+}
+
+.date-container {
+    @include centerRow; 
+    justify-content: center;
+}
+
+.calendar {
+    margin: 30px; 
 }

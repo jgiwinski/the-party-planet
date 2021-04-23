@@ -12,39 +12,42 @@ class App extends Component {
     this.state = {
       error: '', 
       featuredDay: '',
-      // selectedOccasion: '',
-      // inputDate: '',
-      // message: ''
+      selectedOccasion: '',
+      inputDate: '',
+      message: ''
     }
   }
 
   componentDidMount() {
-    getData('2021-4-21')
+    getData('2021-4-20')
       .then(response => this.setState({featuredDay: response.photos[0]}))
       .catch(error => this.setState({error: error}))
   }
-//move to searchform
 
-  // getPhoto = (date) => {
-  //   getData(date)
-  //     .then(response => this.setState({featuredDay: response.photos[0]}))
-  //     .catch(error => this.setState({error: error}))
-  // }
+  getPhoto = (date) => {
+    getData(date)
+      .then(response => this.setState({featuredDay: response.photos[0]}))
+      .catch(error => this.setState({error: error}))
+  }
 
-  // showPhoto = (event) => {
-  //   event.preventDefault(); 
-  //   this.getPhoto(this.state.inputDate)
-  //   switch (this.state.selectedOccasion) {
-  //     case 'birthday' :
-  //       console.log('birthday');
-  //       break;
-  //       case 'anniversary' : 
-  //       console.log('anniversary')
-  //       break; 
-  //       default: 
-  //       console.log('OH BOY OH BOY')
-  //   }
-  // }
+  showPhoto = (event) => {
+    event.preventDefault(); 
+    this.getPhoto(this.state.inputDate)
+    switch (this.state.selectedOccasion) {
+      case 'birthday' :
+        console.log('birthday');
+        break;
+        case 'anniversary' : 
+        console.log('anniversary')
+        break; 
+        default: 
+        console.log('OH BOY OH BOY')
+    }
+  }
+
+  handleChange = (event) => {
+      this.setState({ [event.target.name]: event.target.value})
+  }
 
   render() {
     return (
@@ -52,10 +55,10 @@ class App extends Component {
       <Header />
         <SearchForm 
             handleChange={this.handleChange}
-            // showPhoto={this.showPhoto}
-            // selectedOccasion={this.state.selectedOccasion}
-            // inputDate={this.state.inputDate}
-            // message={this.state.message}
+            showPhoto={this.showPhoto}
+            selectedOccasion={this.state.selectedOccasion}
+            inputDate={this.state.inputDate}
+            message={this.state.message}
         />
         {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
       </main>
