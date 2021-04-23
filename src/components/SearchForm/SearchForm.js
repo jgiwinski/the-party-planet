@@ -6,7 +6,14 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
 
     return (
         <form>
-            <div class="radio-toolbar">
+            <div className="occasion-btn-container" >
+                <button className="occasion-btn">BIRTHDAY</button>
+                <button className="occasion-btn">ANNIVERSARY</button>
+                <button className="occasion-btn">GRADUATION</button>
+                <button className="occasion-btn">COMING OUT</button>
+                <button className="occasion-btn">OTHER</button>
+            </div>
+            <div className="radio-toolbar">
                 <input 
                 type="radio" 
                 id="radioBirthday" 
@@ -38,12 +45,12 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 <label for="radioGraduation">GRADUATION</label> 
 
                 <input 
-                type="radio" 
-                id="radioComingOut" 
-                name="celebration" 
-                // checked={selectedOccasion === 'comingOut'}
-                value="comingOut"
-                onChange={e => handleChange(e)}
+                    type="radio" 
+                    id="radioComingOut" 
+                    name="celebration" 
+                    // checked={selectedOccasion === 'comingOut'}
+                    value="comingOut"
+                    onChange={e => handleChange(e)}
                 />
                 <label for="radioComingOut">COMING OUT</label> 
 

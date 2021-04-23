@@ -23,6 +23,7 @@ class App extends Component {
       .then(response => this.setState({featuredDay: response.photos[0]}))
       .catch(error => this.setState({error: error}))
   }
+//move to searchform
 
   getPhoto = (date) => {
     getData(date)
@@ -51,21 +52,21 @@ class App extends Component {
       console.log(this.state.selectedOccasion)
   }
 
- render() {
-   return (
-     <main>
-     <Header />
-      <SearchForm 
-          handleChange={this.handleChange}
-          showPhoto={this.showPhoto}
-          selectedOccasion={this.state.selectedOccasion}
-          inputDate={this.state.inputDate}
-          message={this.state.message}
-      />
-      {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
-     </main>
-   )
- }
-}
+  render() {
+    return (
+      <main>
+      <Header />
+        <SearchForm 
+            handleChange={this.handleChange}
+            showPhoto={this.showPhoto}
+            selectedOccasion={this.state.selectedOccasion}
+            inputDate={this.state.inputDate}
+            message={this.state.message}
+        />
+        {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
+      </main>
+    )
+  }
+  }
 
 export default App;
