@@ -1,7 +1,7 @@
 import React from 'react'; 
 import './PhotoDetails.scss'; 
 
-const PhotoDetails = ({ featuredDay }) => {
+const PhotoDetails = ({ featuredDay, message }) => {
     const { img_src, rover, earth_date } = featuredDay; 
     const slashDate = earth_date.replaceAll('-', '/')
     const formatDate = inputDate => {
@@ -17,6 +17,7 @@ const PhotoDetails = ({ featuredDay }) => {
             </section>
             <section>
                 <h1>Your Mars Photo!</h1>
+                <h1>{message}</h1>
                 <h2>Photo Taken By: {rover.name}</h2>
                 <h1>{formatDate(slashDate)}</h1>
                 <button>CELEBRATE!</button>

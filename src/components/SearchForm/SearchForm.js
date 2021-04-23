@@ -2,23 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 import './SearchForm.scss'; 
 
-const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
+const SearchForm = ({showPhoto, handleChange, inputDate}) => {
 
         return (
-            // <select name="occasion-container" id="occasion-list" multiple>
-            //     <option value="birthday">BIRTHDAY</option>
-            //     <option value="anniversary">ANNIVERSARY</option>
-            //     <option value="graduation">GRADUATION</option>
-            //     <option value="comingOut">COMING OUT</option>
-            //     <option value="other">OTHER</option>
-            // </select>
-            // <div className="occasion-btn-container" >
-            //     <button className="occasion-btn">BIRTHDAY</button>
-            //     <button className="occasion-btn">ANNIVERSARY</button>
-            //     <button className="occasion-btn">GRADUATION</button>
-            //     <button className="occasion-btn">COMING OUT</button>
-            //     <button className="occasion-btn">OTHER</button>
-            // </div>
             <form>
              <div className="radio-toolbar">
                 <input 
@@ -77,7 +63,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                     onChange={e => handleChange(e)}
                     required
                 ></input>
-                <button onClick={e => showPhoto(e)}>Launch!</button>
+                <button type='submit' onClick={e => showPhoto(e)}>Launch!</button>
             </div>
         </form>
         )

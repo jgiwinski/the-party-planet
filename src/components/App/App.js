@@ -35,22 +35,22 @@ class App extends Component {
     this.getPhoto(this.state.inputDate)
     switch (this.state.selectedOccasion) {
       case 'birthday' :
-        console.log('birthday');
+        this.setState({message: 'Happy Birthday!'})
         break;
       case 'anniversary' : 
-        console.log('anniversary')
+        this.setState({message: 'Happy Anniversary!'})
         break; 
       case 'graduation' :
-        console.log('graduation')
+        this.setState({message: 'Congratulations! You did it!'})
         break; 
       case 'comingOut' :
-        console.log('comingOut')
+        this.setState({message: 'Congratulations! A big day!'})
         break; 
       case 'other' :
-        console.log('PARTY ANYWAY MOTHER FUCKERS')
+        this.setState({message: 'Just a special party day!'})
         break;
       default: 
-        console.log('OH BOY OH BOY')
+        this.setState({message: 'Just a Tuesday I guess.'})
     }
   }
 
@@ -69,7 +69,11 @@ class App extends Component {
             inputDate={this.state.inputDate}
             message={this.state.message}
         />
-        {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
+        {this.state.featuredDay && 
+        <PhotoDetails 
+            featuredDay={this.state.featuredDay}
+            message={this.state.message}
+        />}
       </main>
     )
   }
