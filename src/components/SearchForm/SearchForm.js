@@ -22,6 +22,8 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
             </div>
             <input 
                 type={"date"}
+                min={"2015-01-01"}
+                max={"2021-12-31"}
                 name={"inputDate"}
                 value={inputDate}
                 onChange={e => handleChange(e)}
