@@ -1,9 +1,8 @@
 import React from 'react'; 
 import PropTypes from 'prop-types'; 
+import './SearchForm.scss'; 
 
 const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
-
-
 
     return (
         <form>
@@ -12,7 +11,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 type="radio" 
                 id="radioBirthday" 
                 name="celebration" 
-                checked={selectedOccasion === 'birthday'}
+                // checked={selectedOccasion === 'birthday'}
                 value="birthday"
                 onChange={e => handleChange(e)}
                 />
@@ -22,7 +21,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 type="radio" 
                 id="radioAnniversary" 
                 name="celebration" 
-                checked={selectedOccasion === 'anniversary'}
+                // checked={selectedOccasion === 'anniversary'}
                 value="anniversary"
                 onChange={e => handleChange(e)}
                 />
@@ -32,7 +31,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 type="radio" 
                 id="radioGraduation" 
                 name="celebration" 
-                checked={selectedOccasion === 'graduation'}
+                // checked={selectedOccasion === 'graduation'}
                 value="graduation"
                 onChange={e => handleChange(e)}
                 />
@@ -42,7 +41,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 type="radio" 
                 id="radioComingOut" 
                 name="celebration" 
-                checked={selectedOccasion === 'comingOut'}
+                // checked={selectedOccasion === 'comingOut'}
                 value="comingOut"
                 onChange={e => handleChange(e)}
                 />
@@ -52,7 +51,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate, selectedOccasion}) => {
                 type="radio" 
                 id="radioOther" 
                 name="celebration" 
-                checked={selectedOccasion === 'other'}
+                // checked={selectedOccasion === 'other'}
                 value="other"
                 onChange={e => handleChange(e)}
                 />

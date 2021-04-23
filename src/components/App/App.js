@@ -38,7 +38,7 @@ class App extends Component {
         console.log('birthday');
         break;
         case 'anniversary' : 
-        console.log('Anniversary')
+        console.log('anniversary')
         break; 
         default: 
         console.log('OH BOY OH BOY')
@@ -47,6 +47,8 @@ class App extends Component {
 
   handleChange = e => {
       this.setState({ [e.target.name]: e.target.value })
+      console.log(this.state.inputDate)
+      console.log(this.state.selectedOccasion)
   }
 
  render() {
