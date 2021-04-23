@@ -1,5 +1,5 @@
 import React from 'react'; 
-// import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types'; 
 
 const SearchForm = ({showPhoto, handleChange, inputDate}) => {
     return (
@@ -34,3 +34,8 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
 }
 
 export default SearchForm; 
+
+SearchForm.propTypes = {
+    type: PropTypes.string, 
+    value: PropTypes.string, 
+}

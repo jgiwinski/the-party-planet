@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       error: '', 
       featuredDay: '',
-      inputDate: ''
+      inputDate: '',
+      message: ''
     }
   }
 
