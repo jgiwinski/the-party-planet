@@ -11,9 +11,9 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
     }
 
     return (
-        <div className='main-container'>
-            <section >
-                <img className='main-image' src={img_src} alt={'Mars'}></img>
+        <div className="main-container">
+            <section className="photo-container">
+                <img className="main-image" src={img_src} alt={'Mars'}></img>
             </section>
             <section>
                 <h1>Your Mars Photo!</h1>

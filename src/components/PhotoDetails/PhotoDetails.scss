@@ -2,8 +2,14 @@
 
 .main-container {
     @include centerRow; 
+    padding-top: 60px; 
 }
 
 .main-image {
+    width: 100%;
+    border: solid 5px $orange; 
+}
+
+.photo-container {
     width: 50%;
 }
