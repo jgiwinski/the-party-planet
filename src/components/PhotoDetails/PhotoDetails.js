@@ -22,8 +22,8 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <div className="line"></div>
                 <h1>{formatDate(slashDate)}</h1>
                 <div className="line"></div>
-                <button className="btn">CELEBRATE!</button>
-                <button className="btn" onClick={e => favoritePhoto(e)}>FAVORITE</button> 
+                <button className="btn">CELEBRATE</button>
+                <button className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
                </section>
         </div>
     )
