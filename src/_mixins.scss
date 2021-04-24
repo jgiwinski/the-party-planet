@@ -4,3 +4,10 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin centerRow {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

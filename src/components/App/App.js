@@ -12,12 +12,15 @@ class App extends Component {
     this.state = {
       error: '', 
       featuredDay: '',
-      inputDate: ''
+      selectedOccasion: '',
+      inputDate: '',
+      message: '', 
+      favorites: []
     }
   }
 
   componentDidMount() {
-    getData('2021-4-21')
+    getData('2021-4-20')
       .then(response => this.setState({featuredDay: response.photos[0]}))
       .catch(error => this.setState({error: error}))
   }
@@ -31,26 +34,59 @@ class App extends Component {
   showPhoto = (event) => {
     event.preventDefault(); 
     this.getPhoto(this.state.inputDate)
+    console.log(this.state.featuredDay)
+    switch (this.state.selectedOccasion) {
+      case 'birthday' :
+        this.setState({message: 'Happy Birthday!'})
+        break;
+      case 'anniversary' : 
+        this.setState({message: 'Happy Anniversary!'})
+        break; 
+      case 'graduation' :
+        this.setState({message: 'Congratulations! You did it!'})
+        break; 
+      case 'comingOut' :
+        this.setState({message: 'Congratulations! A big day!'})
+        break; 
+      case 'other' :
+        this.setState({message: 'Just a special party day!'})
+        break;
+      default: 
+        this.setState({message: 'Just a Tuesday I guess.'})
+    }
   }
 
-  handleChange = e => {
-      this.setState({ inputDate: e.target.value })
+  handleChange = (event) => {
+      this.setState({ [event.target.name]: event.target.value})
   }
 
- render() {
-   return (
-     <main>
-     <Header />
-      <SearchForm 
-          handleChange={this.handleChange}
-          showPhoto={this.showPhoto}
-          inputDate={this.state.inputDate}
-      />
-      {this.state.featuredDay && <PhotoDetails featuredDay={this.state.featuredDay}/>}
-      {/* <PhotoDetails featuredDay={this.state.featuredDay}/> */}
-     </main>
-   )
- }
-}
+  favoritePhoto = (id) => {
+      // event.preventDefault() 
+      this.setState({ favorites: [...this.state.favorites, id]})
+      // console.log(event)
+      console.log(this.state.favorites)
+  }
+
+  render() {
+    return (
+      <main>
+      <Header />
+        <SearchForm 
+            handleChange={this.handleChange}
+            showPhoto={this.showPhoto}
+            selectedOccasion={this.state.selectedOccasion}
+            inputDate={this.state.inputDate}
+            message={this.state.message}
+        />
+        {this.state.featuredDay && 
+        <PhotoDetails 
+            featuredDay={this.state.featuredDay}
+            message={this.state.message}
+            favoritePhoto={this.favoritePhoto}
+        />}
+      </main>
+    )
+  }
+  }
 
 export default App;

@@ -17,12 +17,9 @@ header {
 .title {
     font-size: 5em;
     text-shadow: 2px 2px black;
+    -webkit-animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-
-// .text-pop-up-top {
-// 	-webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-// 	        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-// }
 
 .tagline {
     padding-top: 20px; 
