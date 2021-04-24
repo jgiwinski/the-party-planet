@@ -52,7 +52,7 @@ class App extends Component {
         this.setState({message: 'Just a special party day!'})
         break;
       default: 
-        this.setState({message: 'Just a Tuesday I guess.'})
+        this.setState({message: 'Just a Tuesday?'})
     }
   }
 
