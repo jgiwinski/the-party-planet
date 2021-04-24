@@ -14,7 +14,8 @@ class App extends Component {
       featuredDay: '',
       selectedOccasion: '',
       inputDate: '',
-      message: ''
+      message: '', 
+      favorites: []
     }
   }
 
@@ -33,6 +34,7 @@ class App extends Component {
   showPhoto = (event) => {
     event.preventDefault(); 
     this.getPhoto(this.state.inputDate)
+    console.log(this.state.featuredDay)
     switch (this.state.selectedOccasion) {
       case 'birthday' :
         this.setState({message: 'Happy Birthday!'})
@@ -58,6 +60,13 @@ class App extends Component {
       this.setState({ [event.target.name]: event.target.value})
   }
 
+  favoritePhoto = (id) => {
+      // event.preventDefault() 
+      this.setState({ favorites: [...this.state.favorites, id]})
+      // console.log(event)
+      console.log(this.state.favorites)
+  }
+
   render() {
     return (
       <main>
@@ -73,6 +82,7 @@ class App extends Component {
         <PhotoDetails 
             featuredDay={this.state.featuredDay}
             message={this.state.message}
+            favoritePhoto={this.favoritePhoto}
         />}
       </main>
     )

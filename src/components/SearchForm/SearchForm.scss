@@ -31,5 +31,17 @@
 }
 
 .calendar {
-    margin: 30px; 
+    margin: 30px;
+    width: 12%;
+    height: 30px;
+    font-size: medium;
+}
+
+.launch-btn {
+    width: 10%;
+    height: 35px;
+    outline: none;
+    background-color: white;
+    border-radius: 4px;
+    border: none;
 }

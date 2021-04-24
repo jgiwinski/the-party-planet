@@ -63,7 +63,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     onChange={e => handleChange(e)}
                     required
                 ></input>
-                <button type='submit' onClick={e => showPhoto(e)}>Launch!</button>
+                <button className="launch-btn" type="submit" onClick={e => showPhoto(e)}>Launch!</button>
             </div>
         </form>
         )
