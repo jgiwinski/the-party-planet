@@ -91,9 +91,9 @@ class App extends Component {
                         />}
                     </div>
                          ) } }/>
-              <Route exact path="/favorites" render={() => {
-                   <Favorites />
-              }}
+              <Route exact path="/favorites" render={() => 
+                   <Favorites favorites={this.state.favorites}/>
+                   }
               />
           </Switch>
       </main>
