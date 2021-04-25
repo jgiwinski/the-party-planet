@@ -9,11 +9,6 @@ header {
     color: white; 
 }
 
-// .kenburns-right {
-// 	-webkit-animation: kenburns-right 20s ease-out both;
-// 	        animation: kenburns-right 20s ease-out both;
-// }
-
 .title {
     font-size: 5em;
     text-shadow: 2px 2px black;
@@ -24,4 +19,23 @@ header {
 .tagline {
     padding-top: 20px; 
     text-shadow: 1px 1px black;
+}
+
+.nav-btn-container {
+    @include headerButtons;
+    width: 100%;
+    position: absolute;
+    bottom: 185px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    margin: 15px; 
+    outline: none;
+    border: none;
+    color: white;
+    font-size: x-large; 
+            &:hover {
+                color: $orange; 
+            }
 }

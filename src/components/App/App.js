@@ -60,11 +60,10 @@ class App extends Component {
       this.setState({ [event.target.name]: event.target.value})
   }
 
-  favoritePhoto = (id) => {
-      // event.preventDefault() 
-      this.setState({ favorites: [...this.state.favorites, id]})
-      // console.log(event)
-      console.log(this.state.favorites)
+  favoritePhoto = (event) => {
+      event.preventDefault() 
+      this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+      event.target.classList.add('selected')
   }
 
   render() {

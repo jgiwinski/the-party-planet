@@ -38,7 +38,7 @@ h1 {
 }
 
 .btn {
-    background-image: linear-gradient(to right, #944B31 0%, #FB7852 25%);
+    background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
     outline: none;
     border: none;
     border-radius: 4px;
@@ -51,3 +51,8 @@ h1 {
                 background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
         }
 }
+
+// .selected {
+//     background-image: linear-gradient(to right, $darkOrange 0%, $darkOrange 25%);
+//     border: solid 1px white; 
+// }
