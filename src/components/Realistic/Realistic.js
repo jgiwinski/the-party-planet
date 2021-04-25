@@ -64,7 +64,7 @@ export default class Realistic extends React.Component {
   render() {
     return (
       <>
-        <button onClick={this.handlerFire}>Fire</button>
+        <button className="btn" onClick={this.handlerFire}>CELEBRATE</button>
         <ReactCanvasConfetti refConfetti={this.getInstance} style={canvasStyles}/>
       </>
     );
