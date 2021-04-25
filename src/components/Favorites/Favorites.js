@@ -1,9 +1,24 @@
 import React from 'react';
 import './Favorites.scss';
+import Photo from '../Photo/Photo'; 
 
 const Favorites = ({ favorites }) => {
+
+    const favoritePhotos = favorites.map(photo => {
+        return (
+            <Photo 
+                id={photo.id}
+                key={photo.id}
+                image={photo.src_path}
+                date={photo.earth_date}
+            />
+        )
+    })
+
     return (
-        <h1>THIS IS WHERE PHOTOS WILL GO BABY</h1>
+        <section className="grid-display">
+            {favoritePhotos}
+        </section>
     )
 }
 
