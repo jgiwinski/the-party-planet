@@ -1,10 +1,12 @@
 import React, { Component } from 'react'; 
+import { Route, Switch, Link } from 'react-router-dom';
 import './App.scss';
 import '../../animista.css'
 import { getData } from '../../utilities.js'; 
 import Header from '../Header/Header'; 
 import SearchForm from '../SearchForm/SearchForm'; 
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
+import Favorites from '../Favorites/Favorites'; 
 
 class App extends Component {
   constructor() {
@@ -70,19 +72,30 @@ class App extends Component {
     return (
       <main>
       <Header />
-        <SearchForm 
-            handleChange={this.handleChange}
-            showPhoto={this.showPhoto}
-            selectedOccasion={this.state.selectedOccasion}
-            inputDate={this.state.inputDate}
-            message={this.state.message}
-        />
-        {this.state.featuredDay && 
-        <PhotoDetails 
-            featuredDay={this.state.featuredDay}
-            message={this.state.message}
-            favoritePhoto={this.favoritePhoto}
-        />}
+          <Switch>
+              <Route exact path="/" render={() => { 
+                  return (
+                      <div>
+                        <SearchForm 
+                            handleChange={this.handleChange}
+                            showPhoto={this.showPhoto}
+                            selectedOccasion={this.state.selectedOccasion}
+                            inputDate={this.state.inputDate}
+                            message={this.state.message}
+                        />
+                        {this.state.featuredDay && 
+                        <PhotoDetails 
+                            featuredDay={this.state.featuredDay}
+                            message={this.state.message}
+                            favoritePhoto={this.favoritePhoto}
+                        />}
+                    </div>
+                         ) } }/>
+              <Route exact path="/favorites" render={() => {
+                   <Favorites />
+              }}
+              />
+          </Switch>
       </main>
     )
   }
