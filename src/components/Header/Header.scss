@@ -52,10 +52,15 @@ header {
 
     .nav-btn-container  {
         top: 250px; 
+        height: 40px;
     }
 
     .nav-btn {
         font-size: large;
+            &:hover {
+                 color: $darkOrange; 
+                 text-shadow: 1px 1px black; ;
+            }
     }
   }
   
@@ -76,12 +81,7 @@ header {
 
     .nav-btn-container  {
         justify-content: center;
-        height: 40px; 
         top: 200px; 
-    }
-
-    .nav-btn:hover {
-        color: black; 
     }
 
   }
