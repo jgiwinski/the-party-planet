@@ -50,9 +50,22 @@
         }
 }
 
-// @media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
 
-//   }
+    .radio-toolbar {
+        margin: 4%; 
+    }
+
+    .radio-toolbar label {
+        padding: 10px; 
+    }
+
+    .calendar {
+        margin: 20px; 
+        width: 25%;
+    }
+
+  }
   
   
   @media screen and (max-width: 600px) {
@@ -62,7 +75,6 @@
     }
 
     .calendar {
-        margin: 20px; 
         width: 50%;
     }
 
