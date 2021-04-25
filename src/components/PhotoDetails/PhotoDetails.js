@@ -1,6 +1,8 @@
 // import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react'; 
 import './PhotoDetails.scss'; 
+import ReactCanvasConfetti from 'react-canvas-confetti';
+import Realistic from './Realistic'; 
 
 const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
     const { img_src, rover, earth_date, camera } = featuredDay; 
@@ -41,7 +43,41 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <div className="line"></div>
                 <h1>{formatDate(slashDate)}</h1>
                 <div className="line"></div>
-                <button className="btn">CELEBRATE</button>
+                <button className="btn" onClick={function noRefCheck(){}}
+                    type="button">CELEBRATE</button>
+                    <Realistic />
+                        <ReactCanvasConfetti
+                        angle={90}
+                        className="canvas"
+                        colors={[
+                        '#26ccff',
+                        '#a25afd',
+                        '#ff5e7e',
+                        '#88ff5a',
+                        '#fcff42',
+                        '#ffa62d',
+                        '#ff36ff'
+                        ]}
+                        decay={0.8}
+                        drift={0}
+                        gravity={1}
+                        origin={{
+                        x: 0.5,
+                        y: 0.5
+                        }}
+                        particleCount={809}
+                        resize
+                        scalar={1}
+                        shapes={[
+                        'circle',
+                        'square'
+                        ]}
+                        spread={360}
+                        startVelocity={45}
+                        ticks={600}
+                        useWorker
+                        zIndex={-1}
+                        />
                 <button className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
                 {/* <article class="message">
                     <h1 id="message">Placeholder</h1>
@@ -52,3 +88,5 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
 }
 
 export default PhotoDetails; 
+
+
