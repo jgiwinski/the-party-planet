@@ -3,6 +3,23 @@
 footer {
     background-image: url("../Header/mars-2051748.png");
     background-size: cover; 
-    background-position: 50% 80%;
-    height: 600px; 
+    background-position: 50% 90%;
+    height: 150px;  
+    padding: 10px; 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: large;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+    height: 20px; 
+}
+
+a {
+    color: white; 
+    height: 20px; 
+    margin: 0 0 0 6px; 
 }

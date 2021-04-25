@@ -1,10 +1,12 @@
 import React from 'react';
 import './Footer.scss';
+import { FaGithub } from 'react-icons/fa'; 
 
 const Footer = () => {
     return (
         <footer>
-            <h1>HELLO BITCHES</h1>
+            <FaGithub />
+                <a href="https://github.com/jgiwinski">Julia Iwinski</a>
         </footer>
     )
 }
