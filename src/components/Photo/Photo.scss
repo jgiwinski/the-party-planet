@@ -1,0 +1,11 @@
+@import '../../index.scss';
+
+.fav-photo-container {
+    @include centerColumn;
+    align-items: center;
+}
+
+.photo {
+    width: 300px;
+    border: solid 5px $orange; 
+}

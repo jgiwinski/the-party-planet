@@ -9,7 +9,7 @@ const Favorites = ({ favorites }) => {
             <Photo 
                 id={photo.id}
                 key={photo.id}
-                image={photo.src_path}
+                image={photo.img_src}
                 date={photo.earth_date}
             />
         )
