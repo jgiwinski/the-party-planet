@@ -1,6 +1,7 @@
 // import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react'; 
 import './PhotoDetails.scss'; 
+import Realistic from '../Realistic/Realistic'; 
 
 const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
     const { img_src, rover, earth_date, camera } = featuredDay; 
@@ -41,7 +42,7 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <div className="line"></div>
                 <h1>{formatDate(slashDate)}</h1>
                 <div className="line"></div>
-                <button className="btn">CELEBRATE</button>
+                <Realistic />
                 <button className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
                 {/* <article class="message">
                     <h1 id="message">Placeholder</h1>
@@ -52,3 +53,5 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
 }
 
 export default PhotoDetails; 
+
+

@@ -57,36 +57,6 @@ describe('The Party Planet', () => {
 
     it('should view favorited photos', () => {
         cy.get('header').get('div').get('.nav-btn').contains('FAVORITES').click()
-        // view all favorites. 
+        .get('section').get('article').should('have.class', 'fav-photo-container')
     })
-    
-
-// describe('My-Name-Is-Dad search page', () => {
-//     beforeEach(() => {
-//         cy.visit('http://localhost:3000/search')
-//     })
-
-//     it('should search a dadegory', () => {
-//         cy.fixture('searched-joke-data.json').then((dadJokes) => {
-//             cy.intercept('https://icanhazdadjoke.com/search?term=hipster', dadJokes)
-//         }).get('.search-input').type('hipster').get('.search-btn').click().get('.search-page').contains('pizza')
-//     })
-
-
-//     it('should display error message when there is no input for searching', () => {
-//         cy.get('.search-btn').click()
-//         cy.contains('Please insert')
-//     })
-
-//     it('should display a message when a dadegory cannot be found', () => {
-//         cy.get('.search-input').type('afefd')
-//         cy.get('.search-btn').click()
-//         cy.contains('Dadly enough')
-//     })
-
-//     it('should take you home when clicking humble abode', () => {
-//         cy.get('.nav-home').click().url().should('eq', 'http://localhost:3000/').get('.joke-container').contains('Summon')
-//     })
-
-
 })
