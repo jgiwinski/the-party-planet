@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm'; 
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 import Favorites from '../Favorites/Favorites'; 
+import Footer from '../Footer/Footer'; 
 
 class App extends Component {
   constructor() {
@@ -93,9 +94,9 @@ class App extends Component {
                          ) } }/>
               <Route exact path="/favorites" render={() => 
                    <Favorites favorites={this.state.favorites}/>
-                   }
-              />
+                   }/>
           </Switch>
+        <Footer />
       </main>
     )
   }
