@@ -3,7 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import './App.scss';
 import '../../animista.css'
 import { getData } from '../../utilities.js'; 
-import Header from '../Header/Header'; 
+import Header from '../Header/Header.js'; 
 import SearchForm from '../SearchForm/SearchForm'; 
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 import Favorites from '../Favorites/Favorites'; 
