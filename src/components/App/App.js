@@ -37,7 +37,6 @@ class App extends Component {
   showPhoto = (event) => {
     event.preventDefault(); 
     this.getPhoto(this.state.inputDate)
-    console.log(this.state.featuredDay)
     switch (this.state.selectedOccasion) {
       case 'birthday' :
         this.setState({message: 'Happy Birthday!'})
@@ -66,7 +65,6 @@ class App extends Component {
   favoritePhoto = (event) => {
       event.preventDefault() 
       this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
-      event.target.classList.add('selected')
   }
 
   render() {
@@ -76,6 +74,8 @@ class App extends Component {
           <Switch>
               <Route exact path="/" render={() => { 
                   return (
+                    this.state.error ? 
+                    <h1>Looks like there was an {this.state.error} error</h1> :
                       <div>
                         <SearchForm 
                             handleChange={this.handleChange}
@@ -90,11 +90,12 @@ class App extends Component {
                             message={this.state.message}
                             favoritePhoto={this.favoritePhoto}
                         />}
-                    </div>
-                         ) } }/>
+                    </div> 
+                   ) } }/>
               <Route exact path="/favorites" render={() => 
                    <Favorites favorites={this.state.favorites}/>
                    }/>
+              <Route render={() => <Link to='/' className='lost-error'><h1> 404: Please click here to return to the home page</h1></Link>}/>
           </Switch>
         <Footer />
       </main>

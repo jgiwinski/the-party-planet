@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header>
             <h1 className='title'>The Party Planet</h1>
-            <h3 className='tagline'>A celebration out of this world!</h3>
+            <h2 className='tagline'>A celebration out of this world!</h2>
             <div className="nav-btn-container">
                 <Link to={"/"} aria-label="home">
                     <button className="nav-btn">HOME</button>
