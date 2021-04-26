@@ -2,8 +2,6 @@
 
 The Party Planet is an application that allows a user to select a specific calendar day and then will display a photo of mars (provided by the NASA API) that was taken the same day. 
 
-#### Deployed Link
-
 
 ## Project Learning Goals
 - Use and become more familiar with technologies learned in the last 5 weeks. 
