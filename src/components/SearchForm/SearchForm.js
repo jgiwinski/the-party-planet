@@ -14,7 +14,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     value="birthday"
                     onChange={e => handleChange(e)}
                     />
-                <label for="radioBirthday">BIRTHDAY</label>
+                <label htmlFor="radioBirthday">BIRTHDAY</label>
 
                 <input 
                     type="radio" 
@@ -23,7 +23,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     value="anniversary"
                     onChange={e => handleChange(e)}
                     />
-                <label for="radioAnniversary">ANNIVERSARY</label>
+                <label htmlFor="radioAnniversary">ANNIVERSARY</label>
 
                 <input 
                     type="radio" 
@@ -32,7 +32,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     value="graduation"
                     onChange={e => handleChange(e)}
                     />
-                <label for="radioGraduation">GRADUATION</label> 
+                <label htmlFor="radioGraduation">GRADUATION</label> 
 
                 <input 
                     type="radio" 
@@ -41,7 +41,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     value="comingOut"
                     onChange={e => handleChange(e)}
                 />
-                <label for="radioComingOut">COMING OUT</label> 
+                <label htmlFor="radioComingOut">COMING OUT</label> 
 
                 <input 
                     type="radio" 
@@ -50,7 +50,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
                     value="other"
                     onChange={e => handleChange(e)}
                     />
-                <label for="radioOther">OTHER</label> 
+                <label htmlFor="radioOther">OTHER</label> 
             </div>
             <div className="date-container">
                 <input 
@@ -72,6 +72,7 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
 export default SearchForm; 
 
 SearchForm.propTypes = {
-    type: PropTypes.string, 
-    value: PropTypes.string, 
+    showPhoto: PropTypes.func.isRequired, 
+    handleChange: PropTypes.func.isRequired, 
+    inputDate: PropTypes.string, 
 }

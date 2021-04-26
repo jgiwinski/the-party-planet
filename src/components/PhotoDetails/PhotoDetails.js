@@ -1,6 +1,7 @@
 import React from 'react'; 
 import './PhotoDetails.scss'; 
 import Realistic from '../Realistic/Realistic'; 
+import PropTypes from 'prop-types';
 
 const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
     const { img_src, rover, earth_date, camera } = featuredDay; 
@@ -32,4 +33,8 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
 
 export default PhotoDetails; 
 
-
+PhotoDetails.propTypes = {
+    featuredDay: PropTypes.object,
+    message: PropTypes.string, 
+    favoritePhoto: PropTypes.func.isRequired,
+}; 

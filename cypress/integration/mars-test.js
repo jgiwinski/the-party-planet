@@ -31,7 +31,7 @@ describe('The Party Planet', () => {
             .get('img').should('have.class', 'main-image')
     });
 
-    it('should photo details on right side of screen', () => {
+    it('should show photo details on right side of screen', () => {
         cy.get('form').get('div').should('be.visible').and('have.class', 'radio-toolbar')
         .get('label').first()
         .contains('BIRTHDAY').click()
@@ -58,5 +58,12 @@ describe('The Party Planet', () => {
     it('should view favorited photos', () => {
         cy.get('header').get('div').get('.nav-btn').contains('FAVORITES').click()
         .get('section').get('article').should('have.class', 'fav-photo-container')
+    })
+
+    it('should show a 404 error page if the user navigates to an undefined page', () => {
+        cy.visit('http://localhost:3000/mars')
+        cy.contains('return to the home page')
+        cy.get('.lost-error').click()
+        cy.url('eq', 'http://localhost:3000/')
     })
 })

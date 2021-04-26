@@ -1,6 +1,7 @@
 import React from 'react';
 import './Favorites.scss';
 import Photo from '../Photo/Photo'; 
+import PropTypes from 'prop-types';
 
 const Favorites = ({ favorites }) => {
 
@@ -23,3 +24,10 @@ const Favorites = ({ favorites }) => {
 }
 
 export default Favorites; 
+
+Favorites.propTypes = {
+    favorites: PropTypes.arrayOf(PropTypes.object),
+    id: PropTypes.number,
+    image: PropTypes.string,
+    date: PropTypes.string
+}
