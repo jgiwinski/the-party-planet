@@ -66,7 +66,6 @@ class App extends Component {
   favoritePhoto = (event) => {
       event.preventDefault() 
       this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
-      event.target.classList.add('selected')
   }
 
   render() {
@@ -95,6 +94,7 @@ class App extends Component {
               <Route exact path="/favorites" render={() => 
                    <Favorites favorites={this.state.favorites}/>
                    }/>
+              <Route render={() => <Link to='/' className='lost-error'><h1> 404: Please click here to return to the home page</h1></Link>}/>
           </Switch>
         <Footer />
       </main>

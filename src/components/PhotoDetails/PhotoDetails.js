@@ -1,5 +1,4 @@
-// import userEvent from '@testing-library/user-event';
-import React, { useEffect, useState } from 'react'; 
+import React from 'react'; 
 import './PhotoDetails.scss'; 
 import Realistic from '../Realistic/Realistic'; 
 
@@ -11,24 +10,6 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
         let date = new Date(inputDate);
         return monthNames[date.getMonth()] + ' ' + date.getDate() ;
     }
-
-    // const [isFav, notFav] = useState(state.favorites.includes(state.featuredDay))
-
-    // const toggleFav = () => {
-    //     if (isFav) {
-    //         setFav(false)
-    //       } else {
-    //         notFav(true)
-    //       }
-    //   }
-
-    //   useEffect(() => {
-    //     if (isFav && !state.favorites.includes(singleArtwork[0])) {
-    //       addToFavList(singleArtwork[0], state.favorites);
-    //     } else if (!isFav && state.favorites.includes(singleArtwork[0])){
-    //       removeFromFavList(singleArtwork[0], state.favorites);
-    //     }
-    //   }, [isFav])
 
     return (
         <div className="main-container">
@@ -44,9 +25,6 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <div className="line"></div>
                 <Realistic />
                 <button className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
-                {/* <article class="message">
-                    <h1 id="message">Placeholder</h1>
-                </article> */}
                </section>
         </div>
     )
