@@ -34,7 +34,7 @@
     background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
 }
 
-h1 {
+.message {
     font-size: xxx-large;
 }
 
@@ -78,7 +78,7 @@ h1 {
         width: 75%;
     }
 
-    h1 {
+    .message {
         font-size: 22px;
     }
 
