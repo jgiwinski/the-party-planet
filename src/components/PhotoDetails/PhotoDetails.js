@@ -36,7 +36,7 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <img className="main-image" src={img_src} alt={'Mars'}></img>
             </section>
             <section className="details-container">
-                <h1>{message}</h1>
+                <h1 className="message">{message}</h1>
                 <h2>Photo Taken By: {rover.name}</h2>
                 <h3 className="camera">Taken with {rover.name}'s <br/>{camera.full_name}</h3>
                 <div className="line"></div>
