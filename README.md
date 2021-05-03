@@ -15,7 +15,11 @@ The Party Planet is an application that allows a user to select a specific calen
 
 ## Installation
 
-View the code -> https://github.com/jgiwinski/the-party-planet
+1. Clone down this repository to a directory of your choice
+2. <code>cd</code> into the repo
+3. Run <code>npm i</code> to install dependencies
+4. Run the command <code>npm run start</code> to run the application in your browser
+5. Begin interacting!
 
 ## Technologies Used
 - ![React](https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB)
