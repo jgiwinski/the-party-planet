@@ -1,12 +1,17 @@
 @import '../../index.scss';
+$marsPhoto: './mars-2051748.png'; 
 
 header {
     @include centerColumn; 
-    background-image: url("./mars-2051748.png");
+    background-image: url(#{$marsPhoto});
     background-size: cover; 
     background-position: 50% 80%;
     height: 600px; 
     color: white; 
+}
+
+.header-img {
+    height: 600px; 
 }
 
 .title {
