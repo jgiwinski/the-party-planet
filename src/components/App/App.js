@@ -69,6 +69,15 @@ class App extends Component {
       }  
   }
 
+  removePhoto = (event) => {
+    event.preventDefault() 
+    const updatedFavorites = this.state.favorites.filter(favorite => {
+      let intID = parseInt(event.target.id)
+      return favorite.id !== intID
+    })
+    this.setState({ favorites: updatedFavorites})
+  }
+
   getTodaysDate = () => {
     const today = new Date(); 
     // let month = today.getMonth()+1; 
@@ -107,7 +116,10 @@ class App extends Component {
                     </div> 
                    ) } }/>
               <Route exact path="/favorites" render={() => 
-                   <Favorites favorites={this.state.favorites}/>
+                   <Favorites 
+                        favorites={this.state.favorites}
+                        removePhoto={this.removePhoto}
+                        />
                    }/>
               <Route render={() => <Link to='/' className='lost-error'><h1> 404: Please click here to return to the home page</h1></Link>}/>
           </Switch>
