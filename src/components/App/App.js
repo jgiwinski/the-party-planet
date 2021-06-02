@@ -64,13 +64,14 @@ class App extends Component {
 
   favoritePhoto = (event) => {
       event.preventDefault() 
-      this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+      if(!this.state.favorites.includes(this.state.featuredDay)){
+        this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+      }  
   }
 
   getTodaysDate = () => {
     const today = new Date(); 
-    const date = today.getFullYear() +'-'+(today.getMonth()+1)+'-'+today.getDate();
-    console.log(date)
+    const date = today.getFullYear() +'-0'+(today.getMonth()+1)+'-0'+today.getDate();
     return date; 
   }
 

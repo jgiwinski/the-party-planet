@@ -17,9 +17,11 @@ const Favorites = ({ favorites }) => {
     })
 
     return (
+        // {favoritePhotos.length < 1 &&
         <section className="grid-display">
             {favoritePhotos}
         </section>
+        //  }
     )
 }
 

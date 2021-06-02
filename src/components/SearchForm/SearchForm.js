@@ -58,7 +58,6 @@ const SearchForm = ({ showPhoto, handleChange, inputDate, getTodaysDate }) => {
                     type="date"
                     min="2015-01-01"
                     max={getTodaysDate()}
-                    // max={getTodaysDate()}
                     name={"inputDate"}
                     value={inputDate}
                     onChange={e => handleChange(e)}
