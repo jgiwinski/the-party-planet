@@ -4,7 +4,7 @@ import Realistic from '../Realistic/Realistic';
 import PropTypes from 'prop-types';
 
 const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
-    const { img_src, rover, earth_date, camera } = featuredDay; 
+    const { id, img_src, rover, earth_date, camera } = featuredDay; 
     const slashDate = earth_date.replaceAll('-', '/')
     const formatDate = inputDate => {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -25,7 +25,7 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <h1>{formatDate(slashDate)}</h1>
                 <div className="line"></div>
                 <Realistic />
-                <button className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
+                <button id={id} className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
                </section>
         </div>
     )

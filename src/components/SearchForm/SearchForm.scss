@@ -1,29 +1,39 @@
 @import '../../index.scss';
 
+.instruction {
+    text-align: center; 
+    font-size: large; 
+    margin-top: 4%;
+}
+
 .radio-toolbar {
     @include centerRow; 
-    margin: 4% 10%;
-}
+    margin: 2% 10%;
 
-.radio-toolbar input[type="radio"] {
-    opacity: 0;
-    width: 0;
-  }
-
-.radio-toolbar label{
-    background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    color: white;
-        &:hover {
-            background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
+    label {
+        background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        color: white;
+            &:hover {
+                background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
+                cursor: pointer; 
+                color: black; 
+        }
     }
+
+    input[type="radio"] {
+        opacity: 0;
+        width: 0;
+      }
+
+    input[type="radio"]:checked + label {
+        border: solid white;
+    }
+
 }
 
-.radio-toolbar input[type="radio"]:checked + label {
-    border: solid white;
-}
 
 .date-container {
     @include centerRow; 
@@ -44,10 +54,11 @@
     background-color: white;
     border-radius: 4px;
     border: none;
-            &:hover {
-               background-color: $orange;
-               color: white; 
-        }
+        &:hover {
+            background-color: $orange;
+            color: white; 
+            cursor: pointer; 
+    }
 }
 
 @media screen and (max-width: 1100px) {

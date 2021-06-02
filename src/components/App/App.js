@@ -8,6 +8,8 @@ import SearchForm from '../SearchForm/SearchForm';
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 import Favorites from '../Favorites/Favorites'; 
 import Footer from '../Footer/Footer'; 
+import Swal from 'sweetalert2'; 
+// import Swal from '../../../node_modules/@sweetalert2/theme-dark';
 
 class App extends Component {
   constructor() {
@@ -64,7 +66,40 @@ class App extends Component {
 
   favoritePhoto = (event) => {
       event.preventDefault() 
-      this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+      if(!this.state.favorites.includes(this.state.featuredDay)){
+        this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+        Swal.fire (
+          'This photo has been added to your favorites!',
+          'Check it out on the favorites page',
+          'success'
+        )
+      }  else {
+        Swal.fire (
+          'This photo has already been added to your favorites', 
+          'Try selecting a different date', 
+          'warning'
+        )
+      }
+  }
+
+  removePhoto = (event) => {
+    event.preventDefault() 
+    const updatedFavorites = this.state.favorites.filter(favorite => {
+      let intID = parseInt(event.target.id)
+      return favorite.id !== intID
+    })
+    this.setState({ favorites: updatedFavorites })
+  }
+
+  getTodaysDate = () => {
+    const today = new Date(); 
+    // let month = today.getMonth()+1; 
+    // if(month.length === 1 ){
+    //   return month =`0${month}`;
+    // }
+    // console.log(month)
+    const date = today.getFullYear() +'-0'+(today.getMonth()+1)+'-0'+today.getDate();
+    return date; 
   }
 
   render() {
@@ -80,6 +115,7 @@ class App extends Component {
                         <SearchForm 
                             handleChange={this.handleChange}
                             showPhoto={this.showPhoto}
+                            getTodaysDate={this.getTodaysDate}
                             selectedOccasion={this.state.selectedOccasion}
                             inputDate={this.state.inputDate}
                             message={this.state.message}
@@ -93,7 +129,10 @@ class App extends Component {
                     </div> 
                    ) } }/>
               <Route exact path="/favorites" render={() => 
-                   <Favorites favorites={this.state.favorites}/>
+                   <Favorites 
+                        favorites={this.state.favorites}
+                        removePhoto={this.removePhoto}
+                        />
                    }/>
               <Route render={() => <Link to='/' className='lost-error'><h1> 404: Please click here to return to the home page</h1></Link>}/>
           </Switch>

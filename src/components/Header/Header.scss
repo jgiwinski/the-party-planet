@@ -40,9 +40,10 @@ header {
     border: none;
     color: white;
     font-size: x-large; 
-            &:hover {
-                color: $orange; 
-            }
+        &:hover {
+            color: $orange; 
+            cursor: pointer; 
+        }
 }
 
 @media screen and (max-width: 1100px) {
