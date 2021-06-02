@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 import './SearchForm.scss'; 
 
-const SearchForm = ({showPhoto, handleChange, inputDate}) => {
+const SearchForm = ({ showPhoto, handleChange, inputDate, getTodaysDate }) => {
 
         return (
             <form>
@@ -55,9 +55,10 @@ const SearchForm = ({showPhoto, handleChange, inputDate}) => {
             <div className="date-container">
                 <input 
                     className="calendar"
-                    type={"date"}
-                    min={"2015-01-01"}
-                    max={"2021-12-31"}
+                    type="date"
+                    min="2015-01-01"
+                    max={getTodaysDate()}
+                    // max={getTodaysDate()}
                     name={"inputDate"}
                     value={inputDate}
                     onChange={e => handleChange(e)}

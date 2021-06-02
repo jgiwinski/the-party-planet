@@ -67,6 +67,13 @@ class App extends Component {
       this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
   }
 
+  getTodaysDate = () => {
+    const today = new Date(); 
+    const date = today.getFullYear() +'-'+(today.getMonth()+1)+'-'+today.getDate();
+    console.log(date)
+    return date; 
+  }
+
   render() {
     return (
       <main>
@@ -80,6 +87,7 @@ class App extends Component {
                         <SearchForm 
                             handleChange={this.handleChange}
                             showPhoto={this.showPhoto}
+                            getTodaysDate={this.getTodaysDate}
                             selectedOccasion={this.state.selectedOccasion}
                             inputDate={this.state.inputDate}
                             message={this.state.message}
