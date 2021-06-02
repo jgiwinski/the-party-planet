@@ -15,7 +15,7 @@ const Photo = ({ id, image, date, removePhoto }) => {
         <article className="fav-photo-container">
             <img className="photo" src={image} alt="Favorite Mars"></img>
             <h1>{formatDate(slashDate)}</h1>
-            <button id={id} className="remove-btn" onClick={e => removePhoto(e)}>🗑</button>
+            <button id={id} className="remove-btn" onClick={e => removePhoto(e)}>Delete</button>
         </article>
     )
 }
