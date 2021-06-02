@@ -8,6 +8,8 @@ import SearchForm from '../SearchForm/SearchForm';
 import PhotoDetails from '../PhotoDetails/PhotoDetails'; 
 import Favorites from '../Favorites/Favorites'; 
 import Footer from '../Footer/Footer'; 
+import Swal from 'sweetalert2'; 
+// import Swal from '../../../node_modules/@sweetalert2/theme-dark';
 
 class App extends Component {
   constructor() {
@@ -66,8 +68,18 @@ class App extends Component {
       event.preventDefault() 
       if(!this.state.favorites.includes(this.state.featuredDay)){
         this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
-
-      }  
+        Swal.fire (
+          'This photo has been added to your favorites!',
+          'Check it out on the favorites page',
+          'success'
+        )
+      }  else {
+        Swal.fire (
+          'This photo has already been added to your favorites', 
+          'Try selecting a different date', 
+          'warning'
+        )
+      }
   }
 
   removePhoto = (event) => {

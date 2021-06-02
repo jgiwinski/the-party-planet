@@ -1,5 +1,6 @@
 @import '../../index.scss';
 
+
 .main-container {
     @include centerRow; 
     padding: 60px 0;
@@ -56,10 +57,6 @@ h1 {
             background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
             cursor: pointer; 
         }
-        // &:focus {
-        //     background-image: linear-gradient(to right, rgb(189, 189, 189) 0%, rgb(189, 189, 189) 25%);
-        //     color: rgb(158, 158, 158); 
-        // }
 }
 
 @media screen and (max-width: 1100px) {
