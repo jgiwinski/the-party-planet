@@ -52,10 +52,14 @@ h1 {
     font-size: larger;
     color: white;
     text-shadow: 1px 1px black;
-            &:hover {
-                background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
-                cursor: pointer; 
+        &:hover {
+            background-image: linear-gradient(to right, $orange 0%, $lightOrange 25%);
+            cursor: pointer; 
         }
+        // &:focus {
+        //     background-image: linear-gradient(to right, rgb(189, 189, 189) 0%, rgb(189, 189, 189) 25%);
+        //     color: rgb(158, 158, 158); 
+        // }
 }
 
 @media screen and (max-width: 1100px) {

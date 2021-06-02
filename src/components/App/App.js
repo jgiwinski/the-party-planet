@@ -66,6 +66,7 @@ class App extends Component {
       event.preventDefault() 
       if(!this.state.favorites.includes(this.state.featuredDay)){
         this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+
       }  
   }
 
@@ -75,7 +76,7 @@ class App extends Component {
       let intID = parseInt(event.target.id)
       return favorite.id !== intID
     })
-    this.setState({ favorites: updatedFavorites})
+    this.setState({ favorites: updatedFavorites })
   }
 
   getTodaysDate = () => {

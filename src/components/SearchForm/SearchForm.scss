@@ -1,8 +1,14 @@
 @import '../../index.scss';
 
+.instruction {
+    text-align: center; 
+    font-size: large; 
+    margin-top: 4%;
+}
+
 .radio-toolbar {
     @include centerRow; 
-    margin: 4% 10%;
+    margin: 2% 10%;
 
     label {
         background-image: linear-gradient(to right, $darkOrange 0%, $orange 25%);
