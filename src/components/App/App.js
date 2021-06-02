@@ -71,6 +71,11 @@ class App extends Component {
 
   getTodaysDate = () => {
     const today = new Date(); 
+    // let month = today.getMonth()+1; 
+    // if(month.length === 1 ){
+    //   return month =`0${month}`;
+    // }
+    // console.log(month)
     const date = today.getFullYear() +'-0'+(today.getMonth()+1)+'-0'+today.getDate();
     return date; 
   }

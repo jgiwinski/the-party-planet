@@ -17,11 +17,14 @@ const Favorites = ({ favorites }) => {
     })
 
     return (
-        // {favoritePhotos.length < 1 &&
-        <section className="grid-display">
-            {favoritePhotos}
-        </section>
-        //  }
+        <>
+            {favoritePhotos.length === 0 ?
+            <h1 className="no-fav-msg">You haven't added any favorite photos yet!</h1> :
+            <section className="grid-display">
+                {favoritePhotos}
+            </section> 
+            }
+        </>
     )
 }
 

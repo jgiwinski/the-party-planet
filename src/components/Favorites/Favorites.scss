@@ -1,5 +1,11 @@
 @import '../../index.scss';
 
+.no-fav-msg {
+    height: 200px; 
+    padding: 50px; 
+    text-align: center;
+}
+
 .grid-display {
     margin: 5em;
     display: grid;
