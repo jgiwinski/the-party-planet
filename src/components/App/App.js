@@ -74,10 +74,10 @@ class App extends Component {
     return parsedStore; 
   }
 
-  favoritePhoto = (event) => {
+  favoritePhoto = async (event) => {
       event.preventDefault() 
       if(!this.state.favorites.includes(this.state.featuredDay)){
-        this.setState({ favorites: [...this.state.favorites, this.state.featuredDay] });
+        await this.setState({ favorites: [...this.state.favorites, this.state.featuredDay] });
         this.saveToLocal(); 
         Swal.fire (
           'This photo has been added to your favorites!',
@@ -104,11 +104,6 @@ class App extends Component {
 
   getTodaysDate = () => {
     const today = new Date(); 
-    // let month = today.getMonth()+1; 
-    // if(month.length === 1 ){
-    //   return month =`0${month}`;
-    // }
-    // console.log(month)
     const date = today.getFullYear() +'-0'+(today.getMonth()+1)+'-0'+today.getDate();
     return date; 
   }

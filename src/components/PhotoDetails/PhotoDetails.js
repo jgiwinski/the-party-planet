@@ -25,7 +25,7 @@ const PhotoDetails = ({ featuredDay, message, favoritePhoto }) => {
                 <h1>{formatDate(slashDate)}</h1>
                 <div className="line"></div>
                 <Realistic />
-                <button id={id} className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
+                <button data-cy="favorite" id={id} className="btn" onClick={e => favoritePhoto(e)}>ADD TO FAVORITES</button> 
                </section>
         </div>
     )
