@@ -9,7 +9,6 @@ import PhotoDetails from '../PhotoDetails/PhotoDetails';
 import Favorites from '../Favorites/Favorites'; 
 import Footer from '../Footer/Footer'; 
 import Swal from 'sweetalert2'; 
-// import Swal from '../../../node_modules/@sweetalert2/theme-dark';
 
 class App extends Component {
   constructor() {
@@ -20,7 +19,7 @@ class App extends Component {
       selectedOccasion: '',
       inputDate: '',
       message: '', 
-      favorites: []
+      favorites: this.getFromLocal() || []
     }
   }
 
@@ -61,19 +60,31 @@ class App extends Component {
   }
 
   handleChange = (event) => {
-      this.setState({ [event.target.name]: event.target.value})
+      this.setState({ [event.target.name]: event.target.value })
   }
 
-  favoritePhoto = (event) => {
+  saveToLocal = () => {
+    const toStore = JSON.stringify(this.state.favorites)
+    localStorage.setItem('savedPhotos', toStore)
+  }
+
+  getFromLocal = () => {
+    const getStore = localStorage.getItem('savedPhotos')
+    const parsedStore = JSON.parse(getStore); 
+    return parsedStore; 
+  }
+
+  favoritePhoto = async (event) => {
       event.preventDefault() 
       if(!this.state.favorites.includes(this.state.featuredDay)){
-        this.setState({ favorites: [...this.state.favorites, this.state.featuredDay]})
+        await this.setState({ favorites: [...this.state.favorites, this.state.featuredDay] });
+        this.saveToLocal(); 
         Swal.fire (
           'This photo has been added to your favorites!',
           'Check it out on the favorites page',
           'success'
         )
-      }  else {
+      } else {
         Swal.fire (
           'This photo has already been added to your favorites', 
           'Try selecting a different date', 
@@ -93,11 +104,6 @@ class App extends Component {
 
   getTodaysDate = () => {
     const today = new Date(); 
-    // let month = today.getMonth()+1; 
-    // if(month.length === 1 ){
-    //   return month =`0${month}`;
-    // }
-    // console.log(month)
     const date = today.getFullYear() +'-0'+(today.getMonth()+1)+'-0'+today.getDate();
     return date; 
   }

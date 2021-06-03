@@ -6,11 +6,23 @@ describe('The Party Planet', () => {
         })
         cy.visit('http://localhost:3000')
         cy.contains('h1', 'The Party Planet')
-        cy.contains('h3', 'A celebration out of this world')
+        cy.contains('h2', 'A celebration out of this world')
         .get('div').should('be.visible').and('have.class', 'nav-btn-container')
         .get('.nav-btn').should('be.visible').contains('HOME')
         .get('.nav-btn').should('be.visible').contains('FAVORITES')
-    })
+    });
+
+    it('should show a 404 error page if the user navigates to an undefined page', () => {
+        cy.visit('http://localhost:3000/mars')
+        cy.contains('return to the home page')
+        cy.get('.lost-error').click()
+        cy.url('eq', 'http://localhost:3000/')
+    });
+
+    it('should show a message when no photos are favorited', () => {
+        cy.get('header').get('div').get('.nav-btn').contains('FAVORITES').click()
+        .get('.no-fav-msg').contains('You haven\'t added any favorite photos yet!')
+    });
 
     it('should  click FAVORITES button and change URL path', () => {
         cy.get('header').get('div').get('.nav-btn').contains('FAVORITES').click()
@@ -42,7 +54,7 @@ describe('The Party Planet', () => {
         .get('h1').contains('Happy Birthday')
         .get('h2').contains('Photo Taken By: Curiosity')
         .get('h1').contains('June 3')
-    })
+    });
 
     it('should favorite a photo', () => {
         cy.get('form').get('div').should('be.visible').and('have.class', 'radio-toolbar')
@@ -52,18 +64,26 @@ describe('The Party Planet', () => {
         .should('have.value', '2015-06-03')
         .get('.launch-btn').click()
         .get('.main-container').get('.details-container')
-        .get('button').contains('ADD TO FAVORITES').click() 
-    })
+        .get('button').contains('ADD TO FAVORITES').click()
+        .get('.swal2-container').get('.swal2-popup').get('.swal2-actions')
+        .get('.swal2-confirm').click()
+    });
+
+    it('should show an error message when a user tries to favorite a photo twice', () => {
+        cy.get('[data-cy=favorite]').click()
+        .get('.swal2-container').get('.swal2-popup').get('.swal2-actions')
+        .get('.swal2-confirm').click()
+    }); 
 
     it('should view favorited photos', () => {
         cy.get('header').get('div').get('.nav-btn').contains('FAVORITES').click()
         .get('section').get('article').should('have.class', 'fav-photo-container')
-    })
+    });
 
-    it('should show a 404 error page if the user navigates to an undefined page', () => {
-        cy.visit('http://localhost:3000/mars')
-        cy.contains('return to the home page')
-        cy.get('.lost-error').click()
-        cy.url('eq', 'http://localhost:3000/')
-    })
+    it('should delete a photo from the favorites page', () => {
+        cy.get('section')
+        .get('article').first()
+        .get('.remove-btn').should('have.id', '102685').click()
+    }); 
+
 })
