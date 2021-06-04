@@ -74,11 +74,12 @@ Once populated the user can view the new photo and will see two buttons on the r
 
 ![favorites](https://github.com/jgiwinski/the-party-planet/blob/master/assets/favorites.gif)
 
+The App is responsive and can easily be used on a mobile or tablet. 
 #### Mobile:
-![Mobile view](src/assets/mobile.gif)
+![Mobile view](assets/mobile.gif)
 
 #### Tablet: 
-![Tablet view](src/assets/tablet.gif)
+![Tablet view](assets/tablet.gif)
 
 
 ## Project Reflection 
